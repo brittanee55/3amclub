@@ -1,0 +1,158 @@
+<!--
+  FILE NOTE: atlas/interactive-globe.html
+  Updated to use the Human Knowledge Atlas-style 3D globe interaction,
+  adapted for Spooky Scary Storytime / 3AM Club.
+
+  How it works:
+  - Globe.gl renders the rotating Earth.
+  - atlas/globe-engine/spooky-globe-data.js holds the paranormal story pins.
+  - atlas/globe-engine/spooky-globe.js builds the globe and click/hover behavior.
+  - Hovering a pin pauses the globe.
+  - Clicking a pin updates the Selected Story Node panel.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Interactive 3D Atlas | 3AM Club</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="globe-engine/globe-styles.css">
+</head>
+
+<body>
+  <div class="smoke"></div>
+
+  <header class="site-header">
+    <a class="brand" href="../index.html"><span>☾</span><span>3AM CLUB</span></a>
+
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../stories/stories-home.html">Stories</a>
+      <a href="../submissions.html">Submissions</a>
+      <a href="../atlas/interactive-globe.html" class="active">Atlas</a>
+      <a href="../constellation/constellation-home.html">Constellation</a>
+      <a href="../vault/vault-home.html">Vault</a>
+      <a href="../community/community-home.html">Community</a>
+      <a href="../patreon/patreon-hub.html">Patreon</a>
+      <a href="../shop/shop-home.html">Shop</a>
+    </nav>
+
+    <a class="join-btn" href="../patreon/patreon-hub.html">Join the Club</a>
+    <button id="menuOpen" class="menu-toggle">☰</button>
+  </header>
+
+  <div id="mobileMenu" class="mobile-menu">
+    <button id="menuClose" class="close-menu">×</button>
+    <a href="../index.html">Home</a>
+    <a href="../stories/stories-home.html">Stories</a>
+    <a href="../vault/vault-home.html">Vault</a>
+    <a href="../atlas/interactive-globe.html">Archive</a>
+    <a href="../community/community-home.html">Community</a>
+    <a href="../about.html">About</a>
+  </div>
+
+  <main>
+    <section class="atlas-hero">
+      <div class="container atlas-hero-inner">
+        <div>
+          <p class="kicker">The 3AM Atlas</p>
+          <h1>Interactive Story Globe</h1>
+          <p class="muted">
+            Rotate the globe, hover over glowing points to pause, and click a story node
+            to reveal connected experiences, entities, themes, and community rooms.
+          </p>
+        </div>
+
+        <div class="atlas-legend">
+          <span>● Haunted</span>
+          <span>● Forest</span>
+          <span>● Mirrors</span>
+          <span>● UFO</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="atlas-filter-bar">
+      <div class="container globe-control-bar">
+        <button class="theme-chip active" data-spooky-globe-filter="all">All</button>
+        <button class="theme-chip" data-spooky-globe-filter="haunted">Haunted</button>
+        <button class="theme-chip" data-spooky-globe-filter="forest">Forest</button>
+        <button class="theme-chip" data-spooky-globe-filter="mirror">Mirrors</button>
+        <button class="theme-chip" data-spooky-globe-filter="folklore">Folklore</button>
+        <button class="theme-chip" data-spooky-globe-filter="ufo">UFO</button>
+        <button class="theme-chip" data-spooky-globe-filter="technology">Technology</button>
+      </div>
+    </section>
+
+    <section class="section atlas-stage-section">
+      <div class="container atlas-stage">
+        <div class="globe-shell spooky-globe-shell">
+          <div id="atlasGlobe"></div>
+        </div>
+
+        <aside id="locationInfoPanel" class="location-info-panel">
+          <p class="kicker">Selected Story Node</p>
+          <h2>Loading Atlas...</h2>
+          <p>Click a glowing point on the globe to open story connections.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>☾ 3AM Club</span>
+    <span>Real stories. Real people. The truth is stranger.</span>
+    <span>▶︎ ♪ ◎</span>
+  <div class="legal-footer-links">
+      <a href="../legal/privacy-policy.html">Privacy Policy</a>
+      <a href="../legal/cookie-policy.html">Cookie Policy</a>
+      <a href="../legal/terms-of-service.html">Terms</a>
+      <a href="../legal/disclaimer.html">Disclaimer</a>
+      <a href="../legal/accessibility-statement.html">Accessibility</a>
+      <a href="../legal/data-request.html">Data Request</a>
+      <a href="../legal/do-not-sell-share.html">Do Not Sell / Share</a>
+      <a href="../legal/refund-shipping-returns.html">Refunds & Returns</a>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/globe.gl@2.35.0/dist/globe.gl.min.js"></script>
+  <script src="globe-engine/spooky-globe-data.js"></script>
+  <script src="globe-engine/spooky-globe.js"></script>
+  <script src="../js/main.js"></script>
+
+  <!--
+    MOBILE SITE DIRECTORY
+    ------------------------------------------------------------
+    This elegant dropdown/overlay appears only on phones and tablets.
+    Desktop view stays unchanged.
+  -->
+  <div id="mobileSiteMenu" class="mobile-site-menu" aria-hidden="true">
+    <button id="mobileMenuClose" class="mobile-menu-close" aria-label="Close site directory">×</button>
+
+    <p class="kicker">3AM Club Directory</p>
+    <h2>Choose Your Path</h2>
+
+    <div class="mobile-menu-grid">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../stories/stories-home.html">Stories</a>
+      <a href="../submissions.html">Submissions</a>
+      <a href="../atlas/interactive-globe.html">Atlas</a>
+      <a href="../constellation/constellation-home.html">Constellation</a>
+      <a href="../vault/vault-home.html">Vault</a>
+      <a href="../community/community-home.html">Community</a>
+      <a href="../patreon/patreon-hub.html">Patreon</a>
+      <a href="../shop/shop-home.html">Shop</a>
+      <a href="../legal/privacy-policy.html">Privacy Policy</a>
+      <a href="../legal/cookie-policy.html">Cookie Policy</a>
+      <a href="../legal/terms-of-service.html">Terms</a>
+      <a href="../legal/accessibility-statement.html">Accessibility</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+  </div>
+
+</body>
+</html>

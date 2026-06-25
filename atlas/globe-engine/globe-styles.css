@@ -1,0 +1,57 @@
+/* =========================================================
+   3D-GLOBE / GLOBE-STYLES.CSS
+   Extra styling for Atlas globe engine.
+   ========================================================= */
+
+#atlasGlobe {
+  width: 100%;
+  height: 680px;
+  min-height: 680px;
+}
+
+.globe-shell {
+  min-height: 680px;
+  position: relative;
+  overflow: hidden;
+}
+
+.globe-shell canvas {
+  display: block;
+}
+
+.location-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.location-pill-row span {
+  border: 1px solid var(--border-soft);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 7px 10px;
+  font-size: 12px;
+  background: rgba(255,255,255,0.04);
+}
+
+.location-connection-card {
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid var(--border-soft);
+  background: rgba(255,255,255,0.04);
+}
+
+.location-connection-card h3 {
+  color: var(--green);
+  margin-top: 0;
+}
+
+.globe-error {
+  min-height: 680px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 30px;
+  color: var(--gold-light);
+}
