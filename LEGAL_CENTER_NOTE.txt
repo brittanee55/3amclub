@@ -1,0 +1,20 @@
+LEGAL CENTER ADDED
+
+Added professional legal center pages:
+- legal/privacy-policy.html
+- legal/cookie-policy.html
+- legal/terms-of-service.html
+- legal/disclaimer.html
+- legal/accessibility-statement.html
+- legal/data-request.html
+- legal/do-not-sell-share.html
+- legal/refund-shipping-returns.html
+
+Added:
+- Cookie consent banner with Accept / Reject / Manage Preferences
+- Footer legal links across site pages
+- Data request form prototype
+- Cookie preference localStorage prototype
+
+Important:
+These are professional starter templates, not legal advice. Before publishing, replace placeholders with the real business name, address, privacy email, support email, phone, state/country law, vendor list, retention periods, and shop/fulfillment policies. Have an attorney review before launch.

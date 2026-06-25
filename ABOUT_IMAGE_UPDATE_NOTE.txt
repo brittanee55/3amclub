@@ -1,0 +1,1 @@
+Updated about.html to use assets/images/site/about-cathedral.webp, the uploaded black-and-white cathedral image.

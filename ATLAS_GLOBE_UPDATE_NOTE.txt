@@ -1,0 +1,10 @@
+Atlas updated to use a Human Knowledge Atlas-style Globe.gl 3D globe.
+
+Main files:
+- atlas/interactive-globe.html
+- atlas/globe-engine/spooky-globe-data.js
+- atlas/globe-engine/spooky-globe.js
+- atlas/globe-engine/globe-styles.css
+- css/style.css
+
+Open atlas/interactive-globe.html with Live Server. Internet is needed for the Globe.gl and Earth texture CDN links.

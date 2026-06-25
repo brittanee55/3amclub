@@ -1,0 +1,15 @@
+MOBILE RESPONSIVE UPDATE
+
+Added a phone/tablet responsive section at the bottom of css/style.css.
+
+What it does:
+- Keeps the desktop design unchanged.
+- Centers the hero text on phone screens.
+- Makes grids stack cleanly on iPhone/Android.
+- Prevents horizontal scrolling.
+- Makes forms/buttons full-width when needed.
+- Hides large decorative pieces that crowd small screens.
+- Keeps the mobile menu readable.
+
+Test in Chrome:
+Right-click page -> Inspect -> Toggle device toolbar -> test iPhone and Pixel sizes.

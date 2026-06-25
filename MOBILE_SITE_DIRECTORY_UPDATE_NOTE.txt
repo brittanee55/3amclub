@@ -1,0 +1,11 @@
+MOBILE SITE DIRECTORY UPDATE
+
+Added an elegant phone/tablet-only site directory overlay to every HTML page.
+
+Updated:
+- All HTML pages: added <div id="mobileSiteMenu" class="mobile-site-menu">...</div>
+- css/style.css: added mobile-only overlay styling
+- js/main.js: added open/close logic
+
+Desktop stays unchanged.
+On phones, the hamburger menu now opens a polished full-site directory.

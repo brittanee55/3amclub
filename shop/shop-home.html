@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!--
+    SHOP PAGE
+    Updated with Ashlee's real product collection, product images, and prices.
+    Product images live in assets/images/products.
+    Product data also exists in data/products.json for future JS/shop expansion.
+  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Shop | 3AM Club</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="shop-page">
+  <div class="smoke"></div>
+
+  <header class="site-header">
+    <a class="brand" href="../index.html"><span>☾</span><span>3AM CLUB</span></a>
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../stories/stories-home.html">Stories</a>
+      <a href="../submissions.html">Submissions</a>
+      <a href="../atlas/interactive-globe.html">Atlas</a>
+      <a href="../constellation/constellation-home.html">Constellation</a>
+      <a href="../vault/vault-home.html">Vault</a>
+      <a href="../community/community-home.html">Community</a>
+      <a href="../patreon/patreon-hub.html">Patreon</a>
+      <a href="../shop/shop-home.html" class="active">Shop</a>
+    </nav>
+    <a class="join-btn" href="../patreon/patreon-hub.html">Join the Club</a>
+    <button id="menuOpen" class="menu-toggle" aria-label="Open menu">☰</button>
+  </header>
+
+  <div id="mobileMenu" class="mobile-menu">
+    <button id="menuClose" class="close-menu" aria-label="Close menu">×</button>
+    <a href="../index.html">Home</a>
+    <a href="../about.html">About</a>
+    <a href="../stories/stories-home.html">Stories</a>
+    <a href="../shop/shop-home.html">Shop</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+
+  <main>
+    <section class="shop-hero">
+      <div class="container">
+        <p class="kicker">Official Collection</p>
+        <h1>Shop The 3AM Club</h1>
+        
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="shop-heading-row">
+          <div>
+            <p class="kicker">Featured Merch</p>
+            <h2>The Collection</h2>
+          </div>
+          <p class="muted">Prices shown are starter prices and can be connected to Stripe, Shopify, Printful, Squarespace, or another checkout later.</p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card fade-up">
+            <div class="product-image-wrap">
+              <img src="../assets/images/products/mermaids-area-51.webp" alt="&quot;Mermaids & Area 51&quot;">
+              
+            </div>
+            <div class="product-info">
+              <p class="kicker">Conspiracy Tee</p>
+              <h3>"Mermaids & Area 51"</h3>
+              <p class="product-description">A soft black tee for ocean rumors, desert secrets, and the weird corners of the internet.</p>
+              <div class="product-row">
+                <strong>from $20.00</strong>
+                <button class="btn small-btn">View Item →</button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card fade-up">
+            <div class="product-image-wrap">
+              <img src="../assets/images/products/i-would-be-famous.webp" alt="&quot;I would be famous, but...&quot;">
+              
+            </div>
+            <div class="product-info">
+              <p class="kicker">Shadowban Tee</p>
+              <h3>"I would be famous, but..."</h3>
+              <p class="product-description">A dry, funny shirt for algorithmic overlords, internet lore, and late-night story people.</p>
+              <div class="product-row">
+                <strong>from $20.00</strong>
+                <button class="btn small-btn">View Item →</button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card fade-up">
+            <div class="product-image-wrap">
+              <img src="../assets/images/products/billionaires-building-bunkers.webp" alt="&quot;Why are billionaires building bunkers?&quot; MISPRINT/LTD RUN">
+              <span class="sale-badge">Sale</span>
+            </div>
+            <div class="product-info">
+              <p class="kicker">Sale</p>
+              <h3>"Why are billionaires building bunkers?" MISPRINT/LTD RUN</h3>
+              <p class="product-description">Limited misprint run with full conspiracy-board energy.</p>
+              <div class="product-row">
+                <strong>from $13.00</strong>
+                <button class="btn small-btn">View Item →</button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card fade-up">
+            <div class="product-image-wrap">
+              <img src="../assets/images/products/do-good-stay-bad-ladies-tank.webp" alt="Do Good, Stay Bad Ladies Tank">
+              
+            </div>
+            <div class="product-info">
+              <p class="kicker">Ladies Tank</p>
+              <h3>Do Good, Stay Bad Ladies Tank</h3>
+              <p class="product-description">A clean black tank with gothic Do Good, Stay Bad lettering.</p>
+              <div class="product-row">
+                <strong>$22.00</strong>
+                <button class="btn small-btn">View Item →</button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card fade-up">
+            <div class="product-image-wrap">
+              <img src="../assets/images/products/shh-my-show-is-on-mug.webp" alt="&quot;Shh, My Show Is On&quot; / SSS Logo Coffee Mug">
+              
+            </div>
+            <div class="product-info">
+              <p class="kicker">Coffee Mug</p>
+              <h3>"Shh, My Show Is On" / SSS Logo Coffee Mug</h3>
+              <p class="product-description">For coffee, tea, and refusing to pause the scary story.</p>
+              <div class="product-row">
+                <strong>$15.00</strong>
+                <button class="btn small-btn">View Item →</button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card fade-up">
+            <div class="product-image-wrap">
+              <img src="../assets/images/products/make-bars-dive-again-hat.webp" alt="Make Bars Dive Again Embroidered Hat">
+              
+            </div>
+            <div class="product-info">
+              <p class="kicker">Embroidered Hat</p>
+              <h3>Make Bars Dive Again Embroidered Hat</h3>
+              <p class="product-description">A black embroidered hat with a clean, internet-cult-classic phrase.</p>
+              <div class="product-row">
+                <strong>$25.00</strong>
+                <button class="btn small-btn">View Item →</button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card fade-up">
+            <div class="product-image-wrap">
+              <img src="../assets/images/products/do-good-stay-bad-crewneck.webp" alt="Do Good, Stay Bad Crewneck Sweatshirt">
+              
+            </div>
+            <div class="product-info">
+              <p class="kicker">Crewneck</p>
+              <h3>Do Good, Stay Bad Crewneck Sweatshirt</h3>
+              <p class="product-description">A cozy black crewneck with gothic Do Good, Stay Bad lettering.</p>
+              <div class="product-row">
+                <strong>$50.00</strong>
+                <button class="btn small-btn">View Item →</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>☾ 3AM Club</span>
+    <span>
+      <a href="../legal/privacy-policy.html">Privacy</a> ·
+      <a href="../legal/cookie-policy.html">Cookies</a> ·
+      <a href="../legal/terms-of-service.html">Terms</a> ·
+      <a href="../legal/refund-shipping-returns.html">Refunds & Returns</a>
+    </span>
+    <span>Do Good. Stay Bad.</span>
+  </footer>
+
+  <script src="../js/main.js"></script>
+
+  <!--
+    MOBILE SITE DIRECTORY
+    ------------------------------------------------------------
+    This elegant dropdown/overlay appears only on phones and tablets.
+    Desktop view stays unchanged.
+  -->
+  <div id="mobileSiteMenu" class="mobile-site-menu" aria-hidden="true">
+    <button id="mobileMenuClose" class="mobile-menu-close" aria-label="Close site directory">×</button>
+
+    <p class="kicker">3AM Club Directory</p>
+    <h2>Choose Your Path</h2>
+
+    <div class="mobile-menu-grid">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../stories/stories-home.html">Stories</a>
+      <a href="../submissions.html">Submissions</a>
+      <a href="../atlas/interactive-globe.html">Atlas</a>
+      <a href="../constellation/constellation-home.html">Constellation</a>
+      <a href="../vault/vault-home.html">Vault</a>
+      <a href="../community/community-home.html">Community</a>
+      <a href="../patreon/patreon-hub.html">Patreon</a>
+      <a href="../shop/shop-home.html">Shop</a>
+      <a href="../legal/privacy-policy.html">Privacy Policy</a>
+      <a href="../legal/cookie-policy.html">Cookie Policy</a>
+      <a href="../legal/terms-of-service.html">Terms</a>
+      <a href="../legal/accessibility-statement.html">Accessibility</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+  </div>
+
+</body>
+</html>
