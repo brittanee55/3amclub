@@ -1,0 +1,2074 @@
+/*
+  css/style.css
+  ------------------------------------------------------------
+  Main visual design file for the whole prototype.
+
+  This file controls:
+  - the black/orange Ashlee-style color palette
+  - homepage hero, smoke, and campfire feeling
+  - cards, forms, shop grid, and footer
+  - Story Constellation dots and lines
+  - 3D globe layout container
+  - mobile responsive behavior
+
+  All pages point to this file so the entire website stays visually consistent.
+*/
+
+
+:root{--bg:#070707;--panel:#0d0d0d;--ink:#f6f2e9;--muted:#c9c0b5;--orange:#ff9e55;--line:rgba(255,158,85,.28);--soft:rgba(255,158,85,.08)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif;letter-spacing:.03em;overflow-x:hidden}a{color:inherit;text-decoration:none}.container{width:min(1180px,90vw);margin:auto}.site-header{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:24px 5vw;background:linear-gradient(#050505d9,#05050580,transparent);backdrop-filter:blur(4px)}.brand{color:var(--orange);font-weight:800;letter-spacing:.1em;font-size:18px;display:flex;gap:12px;align-items:center}.nav{display:flex;gap:34px;align-items:center;font-size:12px;letter-spacing:.22em;text-transform:uppercase}.nav a{opacity:.9}.nav a:hover,.active{color:var(--orange)}.join-btn,.btn{border:1px solid var(--orange);color:var(--ink);background:rgba(0,0,0,.45);padding:14px 22px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;cursor:pointer;box-shadow:0 0 22px rgba(255,116,39,.14);display:inline-flex;gap:10px;align-items:center;justify-content:center}.btn:hover,.join-btn:hover{background:rgba(255,158,85,.12);transform:translateY(-2px)}.menu-toggle{font-size:26px;color:var(--orange);cursor:pointer}.mobile-menu{position:fixed;inset:0;background:#f1ebdf;color:var(--orange);z-index:50;display:none;align-items:center;justify-content:center;flex-direction:column;gap:32px;font-size:42px;letter-spacing:.18em;text-transform:uppercase}.mobile-menu.open{display:flex}.close-menu{position:absolute;top:28px;right:40px;font-size:52px;color:var(--orange);cursor:pointer}.hero{min-height:620px;height:82vh;background:linear-gradient(90deg,#030303 0%,rgba(0,0,0,.78) 35%,rgba(0,0,0,.32)),url('../assets/images/site/hero-forest-campfire.svg') center/cover;position:relative;display:flex;align-items:center;overflow:hidden}.hero:before,.smoke:before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 10% 45%,rgba(255,255,255,.12),transparent 18%),radial-gradient(circle at 90% 52%,rgba(255,255,255,.11),transparent 20%);filter:blur(28px);animation:smoke 16s ease-in-out infinite alternate;pointer-events:none}.hero-copy{position:relative;z-index:2;width:min(840px,90vw);margin-left:7vw;padding-top:40px}.kicker{color:var(--orange);font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:900}.hero h1{font-size:clamp(52px,7vw,104px);line-height:.92;margin:18px 0;color:var(--orange);font-family:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif;letter-spacing:.04em}.hero p{max-width:630px;font-weight:800;line-height:1.55}.divider{display:flex;align-items:center;gap:22px;justify-content:center;color:var(--orange);letter-spacing:.32em;text-transform:uppercase;font-weight:800;margin:20px 0 44px}.divider:before,.divider:after{content:"";height:1px;background:var(--line);width:190px}.section{padding:88px 0}.choose{margin-top:-30px;background:linear-gradient(180deg,transparent,#060606 16%)}.path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.path-card{text-align:center;padding:54px 40px;border-right:1px solid var(--line);position:relative;overflow:hidden}.path-card:last-child{border-right:none}.icon-circle{width:92px;height:92px;border:1px solid var(--orange);border-radius:50%;display:grid;place-items:center;margin:0 auto 22px;font-size:38px;color:var(--orange);box-shadow:0 0 30px rgba(255,158,85,.15)}.path-card h3,.card h3{color:var(--orange);letter-spacing:.18em;text-transform:uppercase}.path-card p,.card p,.muted{color:var(--muted);line-height:1.7}.path-card:hover .icon-circle{transform:scale(1.06);box-shadow:0 0 45px rgba(255,158,85,.35)}.path-card:hover:before{opacity:1}.path-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 70%,rgba(255,158,85,.12),transparent 35%);opacity:0;transition:.35s}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}.card,.panel{background:rgba(10,10,10,.82);border:1px solid var(--line);padding:28px;position:relative;overflow:hidden}.card:hover{box-shadow:0 0 30px rgba(255,158,85,.13);transform:translateY(-4px)}.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}.about-img,.wide-img{width:100%;border:1px solid var(--line);object-fit:cover}.about-img{max-height:560px}.page-hero{padding:160px 0 70px;background:linear-gradient(180deg,#070707,#0b0b0b);border-bottom:1px solid var(--line)}.page-hero h1{font-size:clamp(46px,6vw,82px);margin:0 0 20px;text-transform:uppercase}.about-text p,.story-text p{font-size:16px;line-height:1.8;margin:0 0 30px;font-weight:700}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}input,textarea,select{width:100%;background:transparent;border:0;border-bottom:1px solid var(--orange);padding:16px 0;color:var(--ink);font:inherit;letter-spacing:.06em;margin-bottom:22px}textarea{min-height:120px}label{display:block;text-transform:uppercase;letter-spacing:.18em;color:var(--ink);font-weight:800;font-size:13px;margin:10px 0}.tiny{font-size:12px;color:#9d9992;text-transform:uppercase;letter-spacing:.16em}.shop-hero{background:#eee8dc;color:#090909;min-height:420px;display:grid;place-items:center;text-align:center;background-image:url('../assets/images/site/shop-collection-hero.png');background-size:cover;background-position:center}.shop-hero h1{font-size:clamp(42px,6vw,78px);text-transform:uppercase}.product{background:#eee8dc;color:#111;padding:18px}.product img{width:100%;aspect-ratio:1/1;object-fit:cover}.product h3{color:#111;text-transform:lowercase}.globe-wrap{height:620px;border:1px solid var(--line);position:relative;background:radial-gradient(circle,#15100b,#020202)}#globeCanvas{width:100%;height:100%;display:block}.tooltip{position:absolute;display:none;background:#050505e8;border:1px solid var(--orange);padding:14px;max-width:260px;z-index:4}.constellation{min-height:430px;border:1px solid var(--line);position:relative;background:radial-gradient(circle at center,rgba(255,158,85,.12),transparent 44%)}.star-node{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--orange);box-shadow:0 0 18px var(--orange)}.line{position:absolute;height:1px;background:rgba(255,158,85,.32);transform-origin:left top}.saved-list{display:grid;gap:14px;margin-top:20px}.saved-item{border:1px solid var(--line);padding:18px;background:#090909}.footer{border-top:1px solid var(--line);padding:38px 5vw;display:flex;justify-content:space-between;align-items:center;color:var(--orange);letter-spacing:.24em;text-transform:uppercase;font-size:12px}.fade-up{opacity:0;transform:translateY(24px);transition:1s}.fade-up.visible{opacity:1;transform:translateY(0)}@keyframes smoke{from{transform:translateX(-20px) translateY(0) scale(1);opacity:.5}to{transform:translateX(30px) translateY(-20px) scale(1.08);opacity:.9}}@media(max-width:900px){.nav{display:none}.hero{height:auto;min-height:720px}.path-grid,.split{grid-template-columns:1fr}.path-card{border-right:none;border-bottom:1px solid var(--line)}.form-row{grid-template-columns:1fr}.footer{flex-direction:column;gap:18px}.hero-copy{margin-left:5vw}.mobile-menu{font-size:30px}.site-header{padding:20px 6vw}}
+
+/* ------------------------------------------------------------
+   UPDATE NOTE: 2026-06-22 requested edits
+   These styles support the cleaned About text, refined Submissions form,
+   and updated Store header image based on the user's latest screenshots.
+------------------------------------------------------------ */
+.about-page .about-img{
+  max-height: none;
+  border: none;
+}
+.about-split{
+  align-items: center;
+}
+.submissions-page .panel{
+  background: transparent;
+  border: 0;
+}
+.checkbox-line{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-transform:none;
+  letter-spacing:.08em;
+}
+.inline-checkbox{
+  width:22px;
+  height:22px;
+  margin:0;
+  accent-color:var(--orange);
+}
+.updated-shop-hero{
+  background-image: url('../assets/images/site/shop-header-updated.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 520px;
+}
+.updated-shop-hero h1{
+  color:#050505;
+  text-shadow:none;
+  font-weight:900;
+  letter-spacing:.02em;
+}
+.shop-header-light{
+  background:linear-gradient(#00000066,#00000000);
+}
+.shop-intro{
+  background:#f4efe5;
+  color:#111;
+  padding:44px 0 0;
+}
+.shop-intro .muted{
+  color:#514a42;
+  text-align:center;
+}
+.shop-products-section{
+  background:#f4efe5;
+  padding-top:44px;
+}
+.shop-footer-light{
+  background:#070707;
+}
+@media(max-width:900px){
+  .updated-shop-hero{min-height:360px;}
+}
+
+
+
+/* ============================================================
+   FINAL APPROVED HOMEPAGE DESIGN
+   ------------------------------------------------------------
+   This section intentionally overrides the earlier prototype
+   homepage styles so the finished index.html matches the final
+   dark cinematic mockup.
+   ============================================================ */
+
+.final-home {
+  background:
+    radial-gradient(circle at 0% 25%, rgba(255,255,255,.06), transparent 18%),
+    radial-gradient(circle at 100% 25%, rgba(255,255,255,.05), transparent 20%),
+    #030303;
+}
+
+.final-header {
+  background: linear-gradient(180deg, rgba(0,0,0,.88), rgba(0,0,0,.35), transparent);
+}
+
+.final-home .nav {
+  gap: 30px;
+}
+
+.final-home .hero.final-home-hero {
+  min-height: 700px;
+  height: 78vh;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.76) 0%, rgba(0,0,0,.48) 35%, rgba(0,0,0,.14) 63%, rgba(0,0,0,.50) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.08) 0%, rgba(0,0,0,.05) 62%, #050505 100%),
+    url('../assets/images/site/homepage-campfire-smoke-final.png') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-home .hero.final-home-hero::before {
+  content: "";
+  position: absolute;
+  inset: -16%;
+  background:
+    radial-gradient(circle at 1% 48%, rgba(255,255,255,.21), transparent 18%),
+    radial-gradient(circle at 100% 48%, rgba(255,255,255,.20), transparent 20%),
+    radial-gradient(circle at 48% 100%, rgba(255,158,85,.13), transparent 26%);
+  filter: blur(34px);
+  opacity: .8;
+  animation: smoke 15s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.final-home .hero.final-home-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 180px;
+  background: linear-gradient(180deg, transparent, #050505 84%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.final-home .hero-copy {
+  position: relative;
+  z-index: 3;
+  width: min(620px, 88vw);
+  margin-left: 7vw;
+  padding-top: 74px;
+}
+
+.final-home .hero h1 {
+  color: var(--orange);
+  font-size: clamp(58px, 6vw, 94px);
+  line-height: .95;
+  letter-spacing: .035em;
+  margin: 14px 0 26px;
+  text-shadow: 0 0 24px rgba(255,116,39,.18);
+}
+
+.final-home .hero p {
+  font-size: 16px;
+  text-transform: uppercase;
+  max-width: 480px;
+  line-height: 1.65;
+}
+
+.final-paths {
+  margin-top: 0;
+  padding: 36px 0 66px;
+  background: linear-gradient(180deg, #050505, #060606);
+}
+
+.final-home .divider {
+  margin-bottom: 30px;
+}
+
+.final-home .path-grid {
+  border-top: none;
+  border-bottom: 1px solid rgba(255,158,85,.22);
+}
+
+.final-home .path-card {
+  min-height: 260px;
+  padding: 40px 42px 34px;
+}
+
+.final-home .icon-circle {
+  width: 96px;
+  height: 96px;
+  font-size: 38px;
+}
+
+.arrow-link {
+  color: var(--orange);
+  font-size: 30px;
+  display: inline-block;
+  margin-top: 10px;
+  transition: transform .25s ease;
+}
+
+.path-card:hover .arrow-link {
+  transform: translateX(8px);
+}
+
+/* Private layer */
+.private-layer-reference {
+  position: relative;
+  padding: 46px 0 50px;
+  background:
+    linear-gradient(180deg, #050505 0%, #090909 50%, #050505 100%);
+  border-top: 1px solid rgba(255,158,85,.20);
+  border-bottom: 1px solid rgba(255,158,85,.20);
+  overflow: hidden;
+}
+
+.private-layer-reference::before {
+  content: "";
+  position: absolute;
+  inset: -24%;
+  background:
+    radial-gradient(circle at 13% 44%, rgba(255,158,85,.20), transparent 15%),
+    radial-gradient(circle at 88% 44%, rgba(255,158,85,.16), transparent 14%),
+    radial-gradient(circle at 50% 120%, rgba(255,255,255,.08), transparent 22%);
+  filter: blur(32px);
+  opacity: .76;
+  pointer-events: none;
+}
+
+.private-layer-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1.8fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.private-copy {
+  text-align: center;
+}
+
+.private-copy h2 {
+  color: var(--orange);
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  font-size: clamp(20px, 2vw, 28px);
+}
+
+.private-copy p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.private-form {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 25px auto 12px;
+}
+
+.private-form input,
+.footer-form input {
+  width: min(360px, 100%);
+  background: rgba(0,0,0,.5);
+  border: 1px solid rgba(255,158,85,.28);
+  color: var(--ink);
+  padding: 16px 18px;
+}
+
+.private-candles {
+  min-height: 220px;
+  background:
+    radial-gradient(circle at 34% 50%, rgba(255,158,85,.48), transparent 12%),
+    radial-gradient(circle at 48% 48%, rgba(255,158,85,.34), transparent 10%),
+    linear-gradient(90deg, rgba(0,0,0,.62), rgba(0,0,0,.14)),
+    url('../assets/images/site/homepage-campfire-smoke-final.png') left bottom / 780px auto no-repeat;
+  mask-image: linear-gradient(90deg, black 45%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, black 45%, transparent 100%);
+  opacity: .78;
+}
+
+.private-door {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  color: var(--orange);
+  font-size: 48px;
+  border: 1px solid rgba(255,158,85,.18);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,158,85,.30), transparent 20%),
+    linear-gradient(135deg, rgba(255,158,85,.12), rgba(0,0,0,.10));
+  box-shadow: inset 0 0 42px rgba(255,158,85,.08), 0 0 42px rgba(255,158,85,.08);
+}
+
+/* Story Constellation */
+.story-constellation-home {
+  padding: 76px 0 46px;
+  background:
+    radial-gradient(circle at 0% 25%, rgba(255,255,255,.06), transparent 18%),
+    radial-gradient(circle at 100% 25%, rgba(255,255,255,.05), transparent 20%),
+    #050505;
+}
+
+.story-constellation-inner {
+  display: grid;
+  grid-template-columns: .82fr 1.18fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.constellation-copy h2 {
+  font-size: clamp(54px, 6vw, 96px);
+  color: #f7f3ea;
+  line-height: .92;
+  margin: 18px 0 24px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.constellation-copy p {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 500px;
+  margin-bottom: 26px;
+}
+
+.constellation-visual {
+  min-height: 350px;
+  border: none;
+  background:
+    radial-gradient(circle at 45% 40%, rgba(255,158,85,.12), transparent 22%),
+    rgba(4,4,4,.65);
+}
+
+.constellation-visual .constellation {
+  min-height: 330px;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 46px;
+}
+
+.stat-card {
+  border: 1px solid rgba(255,158,85,.35);
+  background: rgba(8,8,8,.78);
+  min-height: 118px;
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  grid-template-rows: auto auto;
+  align-items: center;
+  padding: 22px 28px;
+  gap: 0 18px;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 28px rgba(255,158,85,.14);
+}
+
+.stat-icon {
+  grid-row: 1 / span 2;
+  font-size: 38px;
+  color: #f2eee7;
+  opacity: .96;
+}
+
+.stat-card strong {
+  color: var(--orange);
+  font-size: 42px;
+  line-height: 1;
+}
+
+.stat-card small {
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-weight: 900;
+}
+
+/* Footer */
+.final-footer {
+  display: block;
+  border-top: 1px solid rgba(255,158,85,.18);
+  padding: 38px 0 20px;
+  background: #050505;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.25fr .7fr .8fr 1.2fr;
+  gap: 36px;
+  border: 1px solid rgba(255,158,85,.22);
+  padding: 34px;
+}
+
+.footer-grid p,
+.footer-grid a {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.footer-grid a {
+  display: block;
+  margin: 7px 0;
+}
+
+.footer-grid h4 {
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: .16em;
+}
+
+.footer-brand {
+  margin-bottom: 12px;
+}
+
+.socials {
+  display: flex;
+  gap: 18px;
+  color: var(--orange);
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.footer-form {
+  display: grid;
+  gap: 14px;
+}
+
+.footer-form input {
+  width: 100%;
+}
+
+.footer-bottom {
+  margin-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: .08em;
+}
+
+@media (max-width: 980px) {
+  .final-home .nav {
+    display: none;
+  }
+
+  .final-home .hero.final-home-hero {
+    height: auto;
+    min-height: 680px;
+    background-position: center top;
+  }
+
+  .private-layer-inner,
+  .story-constellation-inner,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .private-candles,
+  .private-door {
+    display: none;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .final-home .hero-copy {
+    margin-left: 6vw;
+    padding-top: 90px;
+  }
+
+  .final-home .path-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .final-home .path-card {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,158,85,.20);
+  }
+
+  .private-form {
+    flex-direction: column;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+
+
+/* ============================================================
+   PRIVATE LAYER VISUAL FIX
+   ------------------------------------------------------------
+   Updates the red-circled areas:
+   - Left side becomes a candle/altar visual instead of a dark blurry block.
+   - Right side becomes a detailed glowing door/mail portal instead of a plain box.
+   ============================================================ */
+
+.private-layer-reference {
+  padding: 48px 0 54px !important;
+  background:
+    radial-gradient(circle at 12% 55%, rgba(255, 128, 49, .16), transparent 18%),
+    radial-gradient(circle at 88% 45%, rgba(255, 128, 49, .14), transparent 18%),
+    linear-gradient(180deg, #050505 0%, #0a0807 52%, #050505 100%) !important;
+}
+
+.private-layer-reference::before {
+  opacity: .58 !important;
+}
+
+.private-layer-inner {
+  grid-template-columns: 1.05fr 1.75fr 1.05fr !important;
+  min-height: 258px;
+}
+
+/* LEFT CANDLE ALTAR */
+.private-candles {
+  display: block !important;
+  position: relative;
+  min-height: 245px !important;
+  overflow: hidden;
+  border: 1px solid rgba(255, 158, 85, .16);
+  background:
+    radial-gradient(circle at 35% 48%, rgba(255, 141, 65, .38), transparent 13%),
+    radial-gradient(circle at 48% 38%, rgba(255, 195, 109, .30), transparent 10%),
+    radial-gradient(circle at 27% 66%, rgba(255, 93, 35, .22), transparent 18%),
+    linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.38) 48%, rgba(0,0,0,.86)),
+    url('../assets/images/site/homepage-campfire-smoke-final.png') left bottom / 850px auto no-repeat !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+  opacity: .98 !important;
+  box-shadow: inset 0 0 70px rgba(0,0,0,.72), 0 0 30px rgba(255, 128, 49, .06);
+}
+
+.private-candles::before {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  background:
+    radial-gradient(circle at 18% 42%, rgba(255,255,255,.14), transparent 18%),
+    radial-gradient(circle at 5% 70%, rgba(255,255,255,.11), transparent 16%),
+    radial-gradient(circle at 75% 20%, rgba(255,158,85,.09), transparent 14%);
+  filter: blur(24px);
+  animation: smoke 14s ease-in-out infinite alternate;
+}
+
+.private-candles::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 42%;
+  background:
+    linear-gradient(180deg, transparent, rgba(0,0,0,.80)),
+    radial-gradient(ellipse at 35% 35%, rgba(255, 112, 42, .20), transparent 46%);
+}
+
+.candle {
+  position: absolute;
+  bottom: 54px;
+  width: 18px;
+  border-radius: 4px 4px 2px 2px;
+  background: linear-gradient(90deg, #4c3524, #f4c28e 45%, #53301d);
+  box-shadow: 0 0 26px rgba(255, 129, 50, .42);
+  z-index: 3;
+}
+
+.candle::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -24px;
+  width: 10px;
+  height: 24px;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 45% 45%;
+  background: radial-gradient(circle, #fff4bc 0 18%, #ffae4e 44%, rgba(255, 89, 24, .15) 70%);
+  box-shadow: 0 0 20px #ff8c3e, 0 0 46px rgba(255, 132, 48, .62);
+}
+
+.c1 { left: 32%; height: 72px; }
+.c2 { left: 43%; height: 105px; bottom: 48px; }
+.c3 { left: 53%; height: 84px; bottom: 50px; }
+
+.bottle {
+  position: absolute;
+  bottom: 44px;
+  width: 34px;
+  height: 74px;
+  border-radius: 12px 12px 6px 6px;
+  border: 1px solid rgba(255, 158, 85, .16);
+  background: linear-gradient(90deg, rgba(0,0,0,.75), rgba(255,158,85,.10), rgba(0,0,0,.70));
+  z-index: 2;
+  opacity: .82;
+}
+
+.bottle::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  width: 12px;
+  height: 24px;
+  border-radius: 6px 6px 1px 1px;
+  background: rgba(20, 12, 8, .94);
+  border: 1px solid rgba(255, 158, 85, .12);
+}
+
+.b1 { left: 18%; }
+.b2 { left: 63%; height: 62px; width: 29px; }
+
+/* RIGHT GLOWING DOOR */
+.private-door {
+  display: grid !important;
+  place-items: center;
+  position: relative;
+  min-height: 245px !important;
+  overflow: hidden;
+  border: 1px solid rgba(255, 158, 85, .22) !important;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 128, 49, .26), transparent 23%),
+    radial-gradient(circle at 75% 28%, rgba(255,255,255,.11), transparent 18%),
+    linear-gradient(135deg, rgba(42,23,14,.84), rgba(0,0,0,.82)) !important;
+  box-shadow: inset 0 0 70px rgba(0,0,0,.62), 0 0 30px rgba(255, 128, 49, .08) !important;
+}
+
+.private-door::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 85% 14%, rgba(255,255,255,.20), transparent 17%),
+    radial-gradient(circle at 70% 30%, rgba(255,255,255,.10), transparent 12%);
+  filter: blur(18px);
+  animation: smoke 16s ease-in-out infinite alternate-reverse;
+  opacity: .65;
+}
+
+.private-door::after {
+  content: "";
+  position: absolute;
+  right: -18%;
+  top: -15%;
+  width: 70%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(255,255,255,.18), transparent 55%);
+  filter: blur(22px);
+  opacity: .55;
+}
+
+.door-arch {
+  position: relative;
+  z-index: 2;
+  width: 152px;
+  height: 202px;
+  border: 2px solid rgba(255, 158, 85, .34);
+  border-radius: 78px 78px 10px 10px;
+  background:
+    linear-gradient(90deg, rgba(255,158,85,.10), transparent 22%, rgba(255,158,85,.08) 50%, transparent 78%, rgba(255,158,85,.10)),
+    linear-gradient(180deg, rgba(255,158,85,.10), rgba(0,0,0,.26));
+  box-shadow:
+    inset 0 0 28px rgba(255, 158, 85, .12),
+    0 0 40px rgba(255, 128, 49, .18);
+}
+
+.door-arch::before,
+.door-arch::after {
+  content: "";
+  position: absolute;
+  inset: 17px;
+  border: 1px solid rgba(255, 158, 85, .18);
+  border-radius: 60px 60px 6px 6px;
+}
+
+.door-arch::after {
+  inset: 42px 24px 22px;
+  border-radius: 6px;
+  background:
+    linear-gradient(90deg, transparent 48%, rgba(255,158,85,.16) 50%, transparent 52%),
+    linear-gradient(0deg, transparent 48%, rgba(255,158,85,.12) 50%, transparent 52%);
+}
+
+.door-mail {
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  transform: translate(-50%, -50%);
+  color: var(--orange);
+  font-size: 42px;
+  text-shadow: 0 0 22px rgba(255, 128, 49, .95), 0 0 48px rgba(255, 128, 49, .65);
+  z-index: 4;
+}
+
+.private-copy {
+  position: relative;
+  z-index: 5;
+}
+
+.private-copy h2 {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.private-form .btn {
+  min-width: 210px;
+}
+
+@media (max-width: 980px) {
+  .private-candles,
+  .private-door {
+    display: none !important;
+  }
+}
+
+
+
+/* ============================================================
+   INTERACTIVE 3D ATLAS GLOBE UPDATE
+   ------------------------------------------------------------
+   This styles the 3AM Atlas globe page to feel like the Human
+   Knowledge Atlas 3D globe, but in Ashlee's black/orange
+   campfire horror aesthetic.
+   ============================================================ */
+
+.atlas-hero {
+  padding: 150px 0 46px;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.92), rgba(0,0,0,.62), #050505),
+    url('../assets/images/site/homepage-campfire-smoke-final.png') center top / cover no-repeat;
+  border-bottom: 1px solid rgba(255,158,85,.18);
+}
+
+.atlas-hero-inner {
+  display: grid;
+  grid-template-columns: 1.4fr .8fr;
+  gap: 40px;
+  align-items: end;
+}
+
+.atlas-hero h1 {
+  color: var(--orange);
+  font-size: clamp(48px, 6vw, 92px);
+  line-height: .95;
+  margin: 16px 0;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.atlas-legend {
+  border: 1px solid rgba(255,158,85,.28);
+  background: rgba(0,0,0,.55);
+  padding: 22px;
+  display: grid;
+  gap: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 12px;
+}
+
+.atlas-legend span::first-letter {
+  color: var(--orange);
+}
+
+.atlas-filter-bar {
+  padding: 24px 0;
+  background: #050505;
+  border-bottom: 1px solid rgba(255,158,85,.16);
+}
+
+.globe-control-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.theme-chip {
+  border: 1px solid rgba(255,158,85,.28);
+  color: var(--ink);
+  background: rgba(0,0,0,.45);
+  padding: 11px 15px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.theme-chip:hover,
+.theme-chip.active {
+  color: var(--orange);
+  background: rgba(255,158,85,.10);
+  box-shadow: 0 0 20px rgba(255,158,85,.12);
+}
+
+.atlas-stage-section {
+  background:
+    radial-gradient(circle at 38% 45%, rgba(255,158,85,.08), transparent 28%),
+    #050505;
+  padding-top: 34px;
+}
+
+.atlas-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(320px, .75fr);
+  gap: 26px;
+  align-items: stretch;
+}
+
+.spooky-globe-shell,
+#atlasGlobe {
+  width: 100%;
+  min-height: 720px;
+  height: 720px;
+}
+
+.spooky-globe-shell {
+  border: 1px solid rgba(255,158,85,.28);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,158,85,.08), transparent 36%),
+    rgba(0,0,0,.7);
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 70px rgba(0,0,0,.6), 0 0 40px rgba(255,158,85,.06);
+}
+
+.spooky-globe-shell::before {
+  content: "";
+  position: absolute;
+  inset: -22%;
+  background:
+    radial-gradient(circle at 0% 46%, rgba(255,255,255,.13), transparent 17%),
+    radial-gradient(circle at 105% 52%, rgba(255,255,255,.10), transparent 18%);
+  filter: blur(26px);
+  animation: smoke 16s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.location-info-panel {
+  border: 1px solid rgba(255,158,85,.28);
+  background:
+    linear-gradient(180deg, rgba(13,13,13,.96), rgba(5,5,5,.95));
+  padding: 28px;
+  min-height: 720px;
+  overflow: auto;
+}
+
+.location-info-panel h2 {
+  color: var(--orange);
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.location-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.location-pill-row span {
+  border: 1px solid rgba(255,158,85,.26);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 7px 10px;
+  font-size: 12px;
+  background: rgba(255,255,255,.04);
+}
+
+.location-connection-card {
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid rgba(255,158,85,.20);
+  background: rgba(255,255,255,.035);
+}
+
+.location-connection-card h3 {
+  color: var(--orange);
+  margin-top: 0;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+.location-connection-card li {
+  color: var(--muted);
+  margin: 8px 0;
+}
+
+.spooky-globe-tooltip {
+  background: rgba(3,3,3,.94);
+  padding: 12px;
+  border: 1px solid #ff9e55;
+  color: #f6f2e9;
+  max-width: 280px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 24px rgba(255,158,85,.14);
+}
+
+.spooky-globe-tooltip strong {
+  display: block;
+  color: #ff9e55;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 6px;
+}
+
+.spooky-globe-tooltip span {
+  display: block;
+  color: #c9c0b5;
+  line-height: 1.5;
+}
+
+.globe-error {
+  min-height: 680px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 30px;
+  color: var(--orange);
+}
+
+.atlas-home-hero {
+  min-height: 74vh;
+  display: grid;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.84), rgba(0,0,0,.62)),
+    url('../assets/images/site/homepage-campfire-smoke-final.png') center / cover no-repeat;
+}
+
+@media (max-width: 980px) {
+  .atlas-hero-inner,
+  .atlas-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .spooky-globe-shell,
+  #atlasGlobe,
+  .location-info-panel {
+    min-height: 560px;
+    height: 560px;
+  }
+}
+
+
+
+/* ============================================================
+   NAVBAR ORDER UPDATE
+   ------------------------------------------------------------
+   Updated all shared navbars to:
+   HOME / ABOUT / STORIES / SUBMISSIONS / ATLAS / CONSTELLATION /
+   VAULT / COMMUNITY / PATREON / SHOP
+
+   These rules help the longer nav fit across desktop widths.
+   ============================================================ */
+
+.site-header {
+  gap: 20px;
+}
+
+.nav {
+  gap: clamp(16px, 1.8vw, 32px);
+  flex-wrap: nowrap;
+}
+
+.nav a {
+  white-space: nowrap;
+}
+
+@media (max-width: 1180px) {
+  .nav {
+    gap: 14px;
+    font-size: 10px;
+    letter-spacing: .16em;
+  }
+
+  .join-btn {
+    padding: 12px 16px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 980px) {
+  .nav {
+    display: none;
+  }
+}
+
+
+
+/* ============================================================
+   LEGAL CENTER + COOKIE BANNER
+   ------------------------------------------------------------
+   Professional legal coverage pages:
+   Privacy, Cookies, Terms, Disclaimer, Accessibility,
+   Data Request, Do Not Sell/Share, Refunds/Shipping/Returns.
+   ============================================================ */
+
+.legal-page {
+  background:
+    radial-gradient(circle at 0% 20%, rgba(255,255,255,.05), transparent 20%),
+    radial-gradient(circle at 100% 20%, rgba(255,255,255,.04), transparent 22%),
+    #050505;
+}
+
+.legal-hero {
+  padding: 150px 0 55px;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.90), rgba(0,0,0,.72), #050505),
+    url('../assets/images/site/homepage-campfire-smoke-final.png') center top / cover no-repeat;
+  border-bottom: 1px solid rgba(255,158,85,.20);
+}
+
+.legal-hero h1 {
+  color: var(--orange);
+  font-size: clamp(42px, 6vw, 84px);
+  line-height: .95;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin: 16px 0;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.legal-grid {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 30px;
+  align-items: start;
+}
+
+.legal-sidebar {
+  position: sticky;
+  top: 110px;
+  border: 1px solid rgba(255,158,85,.25);
+  background: rgba(10,10,10,.86);
+  padding: 22px;
+}
+
+.legal-sidebar h3 {
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: .16em;
+}
+
+.legal-sidebar a {
+  display: block;
+  color: var(--muted);
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255,158,85,.10);
+}
+
+.legal-sidebar a:hover {
+  color: var(--orange);
+}
+
+.legal-main {
+  display: grid;
+  gap: 20px;
+}
+
+.legal-card {
+  border: 1px solid rgba(255,158,85,.22);
+  background:
+    linear-gradient(180deg, rgba(13,13,13,.94), rgba(7,7,7,.94));
+  padding: 28px;
+}
+
+.legal-card h2 {
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  margin-top: 0;
+}
+
+.legal-copy,
+.legal-copy p,
+.legal-copy li {
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+.legal-copy a {
+  color: var(--orange);
+  text-decoration: underline;
+}
+
+.legal-form {
+  display: grid;
+  gap: 16px;
+}
+
+.legal-form label {
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.legal-form input,
+.legal-form textarea,
+.legal-form select {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  background: rgba(0,0,0,.45);
+  border: 1px solid rgba(255,158,85,.28);
+  color: var(--ink);
+  padding: 14px 16px;
+}
+
+.legal-footer-links {
+  width: min(1180px, 90vw);
+  margin: 20px auto 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,158,85,.15);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px 22px;
+  font-size: 11px;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.legal-footer-links a:hover {
+  color: var(--orange);
+}
+
+.cookie-banner {
+  position: fixed;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  z-index: 1000;
+  border: 1px solid rgba(255,158,85,.34);
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255,158,85,.12), transparent 24%),
+    rgba(5,5,5,.96);
+  box-shadow: 0 0 50px rgba(0,0,0,.65), 0 0 28px rgba(255,158,85,.10);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: center;
+}
+
+.cookie-banner-copy strong {
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+}
+
+.cookie-banner-copy p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.cookie-banner-actions,
+.cookie-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cookie-btn {
+  border: 1px solid var(--orange);
+  background: rgba(255,158,85,.13);
+  color: var(--ink);
+  padding: 12px 16px;
+  text-transform: uppercase;
+  letter-spacing: .10em;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.cookie-btn.ghost {
+  background: rgba(0,0,0,.45);
+  color: var(--muted);
+}
+
+.cookie-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  background: rgba(0,0,0,.76);
+  display: none;
+  place-items: center;
+  padding: 24px;
+}
+
+.cookie-modal.open {
+  display: grid;
+}
+
+.cookie-modal-card {
+  width: min(680px, 94vw);
+  border: 1px solid rgba(255,158,85,.35);
+  background: #080808;
+  padding: 28px;
+  position: relative;
+  box-shadow: 0 0 60px rgba(0,0,0,.70);
+}
+
+.cookie-modal-card h2 {
+  color: var(--orange);
+  text-transform: uppercase;
+}
+
+.cookie-modal-card label {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 10px;
+  padding: 14px 0;
+  color: var(--ink);
+  border-bottom: 1px solid rgba(255,158,85,.12);
+}
+
+.cookie-modal-card label span {
+  grid-column: 2;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.cookie-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  color: var(--orange);
+  background: none;
+  border: 0;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.success-message {
+  border: 1px solid rgba(255,158,85,.28);
+  background: rgba(255,158,85,.06);
+  padding: 22px;
+}
+
+.success-message h3 {
+  color: var(--orange);
+}
+
+@media (max-width: 900px) {
+  .legal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .legal-sidebar {
+    position: static;
+  }
+
+  .cookie-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .cookie-banner-actions {
+    justify-content: stretch;
+  }
+
+  .cookie-btn {
+    flex: 1;
+  }
+}
+
+
+
+/* ============================================================
+   ABOUT PAGE CATHEDRAL IMAGE UPDATE
+   ------------------------------------------------------------
+   Uses the uploaded black-and-white cathedral image on the
+   About page with elegant gothic styling.
+   ============================================================ */
+
+.about-img,
+.about-cathedral {
+  width: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid rgba(255,158,85,.24);
+  filter: grayscale(100%) contrast(1.08);
+  box-shadow: 0 0 42px rgba(0,0,0,.55);
+}
+
+.about-cathedral {
+  max-height: 620px;
+}
+
+.about-img:hover,
+.about-cathedral:hover {
+  filter: grayscale(100%) contrast(1.16);
+  box-shadow: 0 0 46px rgba(255,158,85,.10);
+}
+
+.about-cathedral-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-cathedral-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 88% 14%, rgba(255,255,255,.10), transparent 22%),
+    linear-gradient(180deg, transparent 70%, rgba(0,0,0,.28));
+  pointer-events: none;
+}
+
+
+
+/* ============================================================
+   SHOP PRODUCT COLLECTION UPDATE
+   ------------------------------------------------------------
+   Adds Ashlee's product grid:
+   - Mermaids & Area 51
+   - I would be famous, but...
+   - Why are billionaires building bunkers?
+   - Do Good, Stay Bad tank
+   - Shh, My Show Is On mug
+   - Make Bars Dive Again hat
+   - Do Good, Stay Bad crewneck
+   ============================================================ */
+
+.shop-page {
+  background: #050505;
+}
+
+.shop-hero {
+  min-height: 520px;
+  display: grid;
+  align-items: center;
+  padding: 150px 0 80px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.78), rgba(0,0,0,.42)),
+    radial-gradient(circle at 78% 38%, rgba(255,158,85,.14), transparent 24%),
+    url('../assets/images/site/homepage-campfire-smoke-final.png') center / cover no-repeat;
+  border-bottom: 1px solid rgba(255,158,85,.22);
+}
+
+.shop-hero h1 {
+  color: var(--orange);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: clamp(52px, 7vw, 104px);
+  line-height: .9;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin: 16px 0;
+}
+
+.shop-heading-row {
+  display: grid;
+  grid-template-columns: 1fr minmax(260px, 460px);
+  gap: 28px;
+  align-items: end;
+  margin-bottom: 34px;
+}
+
+.shop-heading-row h2 {
+  color: var(--ink);
+  font-size: clamp(36px, 4vw, 62px);
+  line-height: .95;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin: 10px 0 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  background: linear-gradient(180deg, rgba(13,13,13,.96), rgba(7,7,7,.96));
+  border: 1px solid rgba(255,158,85,.22);
+  overflow: hidden;
+  position: relative;
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255,158,85,.52);
+  box-shadow: 0 0 36px rgba(255,158,85,.12);
+}
+
+.product-image-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: #e8dac8;
+  overflow: hidden;
+}
+
+.product-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .45s ease, filter .45s ease;
+}
+
+.product-card:hover .product-image-wrap img {
+  transform: scale(1.035);
+  filter: contrast(1.06);
+}
+
+.sale-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--orange);
+  color: #050505;
+  padding: 8px 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 11px;
+}
+
+.product-info {
+  padding: 22px;
+}
+
+.product-info h3 {
+  color: var(--ink);
+  min-height: 58px;
+  margin: 8px 0 10px;
+  font-size: 18px;
+  line-height: 1.28;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.product-description {
+  color: var(--muted);
+  line-height: 1.65;
+  min-height: 78px;
+}
+
+.product-row {
+  border-top: 1px solid rgba(255,158,85,.16);
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.product-row strong {
+  color: var(--orange);
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.small-btn {
+  padding: 10px 12px;
+  font-size: 11px;
+}
+
+@media (max-width: 1060px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .shop-heading-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* ============================================================
+   MOBILE CENTERING + PHONE DESIGN LOCK
+   ------------------------------------------------------------
+   Purpose:
+   Keep the desktop design feeling the same, but make it behave
+   beautifully on iPhone and Android screens.
+
+   What this fixes:
+   - prevents horizontal scrolling
+   - keeps hero text readable
+   - centers sections on phones
+   - stacks grid/cards cleanly
+   - makes buttons and forms full-width when needed
+   - keeps images from overflowing
+   - improves navbar/mobile menu spacing
+   ============================================================ */
+
+/* Global safety: nothing should push past the phone screen */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+.container {
+  width: min(1180px, 92vw);
+}
+
+/* Tablets and smaller laptops */
+@media (max-width: 1180px) {
+  .site-header {
+    padding: 18px 4vw;
+    gap: 16px;
+  }
+
+  .nav {
+    gap: 14px;
+    font-size: 10px;
+    letter-spacing: .14em;
+  }
+
+  .join-btn {
+    padding: 12px 15px;
+    font-size: 11px;
+  }
+}
+
+/* Main phone/tablet breakpoint */
+@media (max-width: 980px) {
+  .site-header {
+    padding: 16px 5vw;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  .nav {
+    display: none !important;
+  }
+
+  .join-btn {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-menu {
+    padding: 80px 22px;
+    text-align: center;
+    font-size: clamp(30px, 9vw, 52px);
+    line-height: 1.25;
+    gap: 24px;
+  }
+
+  .close-menu {
+    top: 20px;
+    right: 24px;
+  }
+
+  .hero,
+  .final-home .hero.final-home-hero,
+  .final-home-hero {
+    min-height: 690px;
+    height: auto;
+    align-items: center;
+    background-position: center top !important;
+  }
+
+  .hero-copy,
+  .final-home .hero-copy,
+  .final-home-hero .hero-copy {
+    width: min(560px, 88vw);
+    margin: 0 auto !important;
+    padding-top: 90px;
+    text-align: center;
+    transform: none;
+  }
+
+  .hero h1,
+  .final-home .hero h1,
+  .final-home-hero h1 {
+    font-size: clamp(48px, 14vw, 78px);
+    line-height: .92;
+    letter-spacing: .03em;
+    text-align: center;
+  }
+
+  .hero p,
+  .final-home .hero p,
+  .final-home-hero p {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(13px, 3.6vw, 16px);
+    line-height: 1.65;
+    text-align: center;
+  }
+
+  .btn,
+  .join-btn {
+    min-height: 48px;
+  }
+
+  .page-hero,
+  .shop-hero,
+  .atlas-hero,
+  .legal-hero {
+    padding-top: 120px;
+    text-align: center;
+  }
+
+  .split,
+  .private-layer-inner,
+  .story-constellation-inner,
+  .atlas-hero-inner,
+  .atlas-stage,
+  .legal-grid,
+  .footer-grid,
+  .shop-heading-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .path-grid,
+  .stats-row,
+  .product-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .path-card {
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(255,158,85,.18);
+    text-align: center;
+    padding: 38px 24px;
+  }
+
+  .path-card:last-child {
+    border-bottom: 0;
+  }
+
+  .icon-circle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .private-candles,
+  .private-door {
+    display: none !important;
+  }
+
+  .private-copy,
+  .constellation-copy,
+  .shop-heading-row,
+  .legal-main {
+    text-align: center;
+  }
+
+  .private-form,
+  .footer-form,
+  .legal-form {
+    width: min(520px, 100%);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .private-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .private-form input,
+  .private-form .btn,
+  .footer-form input,
+  .footer-form .btn,
+  .legal-form input,
+  .legal-form textarea,
+  .legal-form select {
+    width: 100%;
+  }
+
+  .constellation-copy h2 {
+    text-align: center;
+    font-size: clamp(48px, 15vw, 80px);
+  }
+
+  .constellation-copy p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .constellation-visual,
+  .constellation-panel,
+  .panel {
+    min-height: 280px;
+  }
+
+  .stats-row {
+    gap: 16px;
+  }
+
+  .stat-card {
+    grid-template-columns: 58px 1fr;
+    text-align: left;
+  }
+
+  .product-card {
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .product-info {
+    text-align: center;
+  }
+
+  .product-info h3 {
+    min-height: auto;
+  }
+
+  .product-description {
+    min-height: auto;
+  }
+
+  .product-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-img,
+  .about-cathedral {
+    max-height: none;
+    height: auto;
+  }
+
+  .spooky-globe-shell,
+  #atlasGlobe,
+  .location-info-panel {
+    min-height: 520px !important;
+    height: 520px !important;
+  }
+
+  .location-info-panel {
+    height: auto !important;
+    min-height: auto !important;
+    text-align: left;
+  }
+
+  .legal-sidebar {
+    position: static;
+    text-align: center;
+  }
+
+  .cookie-banner {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .cookie-banner-actions {
+    justify-content: center;
+  }
+}
+
+/* Small phones */
+@media (max-width: 640px) {
+  .container {
+    width: min(100% - 32px, 520px);
+  }
+
+  .site-header {
+    padding: 14px 18px;
+  }
+
+  .brand {
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .hero,
+  .final-home .hero.final-home-hero,
+  .final-home-hero {
+    min-height: 620px;
+    background-position: center top !important;
+  }
+
+  .hero-copy,
+  .final-home .hero-copy,
+  .final-home-hero .hero-copy {
+    width: min(100% - 34px, 430px);
+    padding-top: 90px;
+  }
+
+  .hero h1,
+  .final-home .hero h1,
+  .final-home-hero h1 {
+    font-size: clamp(42px, 15vw, 62px);
+  }
+
+  .kicker {
+    letter-spacing: .14em;
+  }
+
+  .divider {
+    font-size: 14px;
+    letter-spacing: .20em;
+  }
+
+  .section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .private-layer-reference,
+  .private-layer {
+    padding: 46px 0;
+  }
+
+  .private-copy h2,
+  .section-title {
+    letter-spacing: .18em;
+    font-size: clamp(19px, 6vw, 26px);
+  }
+
+  .private-copy p,
+  .muted,
+  .legal-copy,
+  .legal-copy p,
+  .legal-copy li {
+    font-size: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 18px;
+    font-size: 12px;
+  }
+
+  .mobile-menu a {
+    max-width: 100%;
+    word-break: normal;
+  }
+
+  .story-constellation-home {
+    padding-top: 54px;
+  }
+
+  .stats-row {
+    margin-top: 28px;
+  }
+
+  .stat-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .stat-icon {
+    grid-row: auto;
+  }
+
+  .footer,
+  .final-footer {
+    text-align: center;
+    gap: 14px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .legal-footer-links {
+    gap: 10px 14px;
+    font-size: 10px;
+  }
+
+  .shop-hero h1,
+  .atlas-hero h1,
+  .legal-hero h1 {
+    font-size: clamp(42px, 14vw, 68px);
+  }
+
+  .product-image-wrap {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* Very narrow phones like older iPhones */
+@media (max-width: 390px) {
+  .hero h1,
+  .final-home .hero h1,
+  .final-home-hero h1 {
+    font-size: 40px;
+  }
+
+  .mobile-menu {
+    font-size: 28px;
+  }
+
+  .brand span:last-child {
+    letter-spacing: .06em;
+  }
+
+  .private-copy h2 {
+    letter-spacing: .14em;
+  }
+}
+
+
+
+/* ============================================================
+   ELEGANT MOBILE SITE DIRECTORY
+   ------------------------------------------------------------
+   Adds a phone/tablet-only dropdown overlay that shows the
+   whole website directory. Desktop view is intentionally unchanged.
+
+   This works with:
+   - button#menuOpen or button#mobileMenuOpen
+   - div#mobileSiteMenu
+   - button#mobileMenuClose
+   ============================================================ */
+
+.mobile-site-menu {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  .mobile-site-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(255,158,85,.17), transparent 36%),
+      radial-gradient(circle at 0% 60%, rgba(255,255,255,.06), transparent 24%),
+      radial-gradient(circle at 100% 60%, rgba(255,255,255,.055), transparent 24%),
+      rgba(5,5,5,.985);
+    color: #f6f2e9;
+    padding: 92px 26px 42px;
+    text-align: center;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-site-menu.open {
+    display: block;
+  }
+
+  .mobile-site-menu::before {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 15% 45%, rgba(255,255,255,.10), transparent 18%),
+      radial-gradient(circle at 85% 50%, rgba(255,255,255,.08), transparent 20%);
+    filter: blur(28px);
+    opacity: .72;
+    animation: smoke 16s ease-in-out infinite alternate;
+  }
+
+  .mobile-site-menu .kicker,
+  .mobile-site-menu h2,
+  .mobile-menu-grid {
+    position: relative;
+    z-index: 2;
+  }
+
+  .mobile-site-menu .kicker {
+    color: #ff9e55;
+    text-transform: uppercase;
+    letter-spacing: .22em;
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .mobile-site-menu h2 {
+    color: #ff9e55;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: clamp(30px, 9vw, 46px);
+    line-height: .95;
+    margin: 0 0 30px;
+    text-shadow: 0 0 24px rgba(255,158,85,.16);
+  }
+
+  .mobile-menu-close {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    z-index: 3;
+    background: transparent;
+    border: 0;
+    color: #ff9e55;
+    font-size: 48px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .mobile-menu-grid {
+    display: grid;
+    gap: 13px;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .mobile-menu-grid a {
+    border: 1px solid rgba(255,158,85,.35);
+    background:
+      linear-gradient(90deg, rgba(255,158,85,.055), rgba(0,0,0,.48), rgba(255,158,85,.04));
+    color: #f6f2e9;
+    padding: 16px 18px;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    font-size: 13px;
+    font-weight: 800;
+    box-shadow: 0 0 22px rgba(255,158,85,.055);
+    backdrop-filter: blur(4px);
+  }
+
+  .mobile-menu-grid a:hover,
+  .mobile-menu-grid a:focus {
+    color: #ff9e55;
+    background: rgba(255,158,85,.10);
+    box-shadow: 0 0 28px rgba(255,158,85,.14);
+    outline: none;
+  }
+
+  body.mobile-directory-open {
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 981px) {
+  .mobile-site-menu {
+    display: none !important;
+  }
+}

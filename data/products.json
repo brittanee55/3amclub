@@ -1,0 +1,65 @@
+[
+  {
+    "id": "product-1",
+    "name": "\"Mermaids & Area 51\"",
+    "price": "from $20.00",
+    "tag": "Conspiracy Tee",
+    "description": "A soft black tee for ocean rumors, desert secrets, and the weird corners of the internet.",
+    "image": "assets/images/products/mermaids-area-51.webp",
+    "category": "Merch"
+  },
+  {
+    "id": "product-2",
+    "name": "\"I would be famous, but...\"",
+    "price": "from $20.00",
+    "tag": "Shadowban Tee",
+    "description": "A dry, funny shirt for algorithmic overlords, internet lore, and late-night story people.",
+    "image": "assets/images/products/i-would-be-famous.webp",
+    "category": "Merch"
+  },
+  {
+    "id": "product-3",
+    "name": "\"Why are billionaires building bunkers?\" MISPRINT/LTD RUN",
+    "price": "from $13.00",
+    "tag": "Sale",
+    "description": "Limited misprint run with full conspiracy-board energy.",
+    "image": "assets/images/products/billionaires-building-bunkers.webp",
+    "category": "Merch"
+  },
+  {
+    "id": "product-4",
+    "name": "Do Good, Stay Bad Ladies Tank",
+    "price": "$22.00",
+    "tag": "Ladies Tank",
+    "description": "A clean black tank with gothic Do Good, Stay Bad lettering.",
+    "image": "assets/images/products/do-good-stay-bad-ladies-tank.webp",
+    "category": "Merch"
+  },
+  {
+    "id": "product-5",
+    "name": "\"Shh, My Show Is On\" / SSS Logo Coffee Mug",
+    "price": "$15.00",
+    "tag": "Coffee Mug",
+    "description": "For coffee, tea, and refusing to pause the scary story.",
+    "image": "assets/images/products/shh-my-show-is-on-mug.webp",
+    "category": "Merch"
+  },
+  {
+    "id": "product-6",
+    "name": "Make Bars Dive Again Embroidered Hat",
+    "price": "$25.00",
+    "tag": "Embroidered Hat",
+    "description": "A black embroidered hat with a clean, internet-cult-classic phrase.",
+    "image": "assets/images/products/make-bars-dive-again-hat.webp",
+    "category": "Merch"
+  },
+  {
+    "id": "product-7",
+    "name": "Do Good, Stay Bad Crewneck Sweatshirt",
+    "price": "$50.00",
+    "tag": "Crewneck",
+    "description": "A cozy black crewneck with gothic Do Good, Stay Bad lettering.",
+    "image": "assets/images/products/do-good-stay-bad-crewneck.webp",
+    "category": "Merch"
+  }
+]

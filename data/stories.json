@@ -1,0 +1,123 @@
+[
+  {
+    "id": "gray-man",
+    "title": "The Gray Man",
+    "category": "Folklore",
+    "location": "Pawleys Island / Folly Beach, South Carolina",
+    "lat": 33.8361,
+    "lon": -79.0478,
+    "tags": [
+      "storm warning",
+      "ancestor",
+      "coastal legend",
+      "hurricane"
+    ],
+    "summary": "A gray figure appears before a hurricane and warns Tommy to leave. The story connects family history, warning spirits, and coastal folklore.",
+    "matches": [
+      "storm warning",
+      "ancestor",
+      "coastal legend"
+    ]
+  },
+  {
+    "id": "basin-park",
+    "title": "Seventh Floor Portal",
+    "category": "Haunted Location",
+    "location": "Basin Park Hotel, Eureka Springs, Arkansas",
+    "lat": 36.4012,
+    "lon": -93.7379,
+    "tags": [
+      "portal",
+      "hotel",
+      "layered reality",
+      "bar"
+    ],
+    "summary": "A hotel worker experiences a bar coming alive with unseen presences, footsteps, laughter, and a hostile entity.",
+    "matches": [
+      "hotel",
+      "portal",
+      "layered reality"
+    ]
+  },
+  {
+    "id": "mirror-guest",
+    "title": "The Mirror Guest",
+    "category": "Mirror Entity",
+    "location": "Short-term rental, United States",
+    "lat": 39.5,
+    "lon": -98.35,
+    "tags": [
+      "mirrors",
+      "sundown",
+      "scream",
+      "layout"
+    ],
+    "summary": "A guest requests every mirror be covered before sundown. The host later hears layered screams, footsteps, and warnings that something used the mirrors to learn the house.",
+    "matches": [
+      "mirrors",
+      "sundown",
+      "scream"
+    ]
+  },
+  {
+    "id": "mr-sage",
+    "title": "Mr. Sage and the Goatman",
+    "category": "Desert / Entity",
+    "location": "Valley of Fire, Nevada",
+    "lat": 36.4855,
+    "lon": -114.5324,
+    "tags": [
+      "333",
+      "goatman",
+      "desert",
+      "thin line"
+    ],
+    "summary": "A casino regular warns a blackjack dealer not to turn around if he hears hooves in the desert. The story connects 333, thin lines, and alternate versions of the self.",
+    "matches": [
+      "333",
+      "goatman",
+      "desert",
+      "hooves"
+    ]
+  },
+  {
+    "id": "national-parks",
+    "title": "National Park Horned Figure",
+    "category": "National Parks",
+    "location": "National Parks, United States",
+    "lat": 44.428,
+    "lon": -110.5885,
+    "tags": [
+      "horned figure",
+      "missing campers",
+      "rangers",
+      "black binder"
+    ],
+    "summary": "A ranger binder allegedly tracks recurring sightings of a horned humanoid creature, missing workers, and cycles of returns.",
+    "matches": [
+      "horned figure",
+      "rangers",
+      "missing campers"
+    ]
+  },
+  {
+    "id": "thanks-hate-this",
+    "title": "Thanks, I Hate This",
+    "category": "Strange Headlines",
+    "location": "Weekly Segment",
+    "lat": 37.0902,
+    "lon": -95.7129,
+    "tags": [
+      "AI",
+      "drones",
+      "Pokemon Go",
+      "weird news"
+    ],
+    "summary": "A strange-news segment where headlines that sound fake but are presented as real become rabbit holes for the community.",
+    "matches": [
+      "AI",
+      "drones",
+      "weird news"
+    ]
+  }
+]
